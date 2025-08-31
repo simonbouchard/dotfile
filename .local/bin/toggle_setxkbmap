@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# Use setxkbmap to switch between CA and US keyboard map on Arch Linux with Openbox WM.
-# Bound to a keybinding (C-space) defined in rc.xml, it just runs a case statement to set the keyboard to whichever one it currently isn't.
-case $(setxkbmap -query | grep layout | awk '{ print $2 }') in
-          ca) setxkbmap us ;;
-          us) setxkbmap ca -variant fr-legacy ;;
-           *) setxkbmap us ;;
-esac
